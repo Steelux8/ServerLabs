@@ -139,9 +139,13 @@ def main() -> None:
     produtos.append(Produto(30987, 'pão de milho', 'AL', 2, dec('1')))
     produtos.append(Produto(30098, 'leite mimosa', 'AL', 10, dec('2')))
     produtos.append(Produto(21109, 'fairy', 'DL', 20, dec('3')))
-    # produtos.append(Produto(21109, 'fairy', 'DL', 20, dec('3')))
+    
+    value = input("Digite um ID")
+    
+    for key, value in produtos.items():
+        print(key, value)
 
-    produtos._dump()
+    # produtos._dump()
 #:
 
 if __name__ == '__main__':
