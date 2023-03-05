@@ -89,12 +89,26 @@ class UnknownLanguage extends Error {}
 let currentLanguage = 'en_US';
 
 function setCurrentLanguage(newCurrentLanguage) {
+    if (newCurrentLanguage in userMessages) {
+        this.currentLanguage = newCurrentLanguage;
+    }
+    else {
+        throw new UnknownLanguage;
+    }
 }
 
 function tr(messageID) {
+    if (messageID in userMessages[currentLanguage]) {
+        translatedText = userMessages[currentLanguage][messageID]
+    }
+    else {
+        throw new UnknownMessageID;
+    }
 }
 
 const trDoc = (function() {
     const trDocRe = '' /* ... */;
     return function trDoc(ancestorNode) {
-})();
+    
+    }
+});
